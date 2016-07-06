@@ -10,7 +10,17 @@ const config = {
     module: {
         loaders: [
             {
-                test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/
+                test: /\.jsx?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/
+            },
+            {
+                test: /\.css$/,
+                loaders: ['style', 'css']
+            },
+            {
+                test: /\.(eot|ttf|woff2?|otf|svg)$/,
+                loaders: ['file']
             }
         ]
     },
