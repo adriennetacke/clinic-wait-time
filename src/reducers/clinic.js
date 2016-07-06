@@ -22,7 +22,8 @@ const ACTION_HANDLERS = {
 };
 
 const initialState = {
-    providers: []
+    providers: [],
+    name: ''
 };
 
 export default function clinicReducer (state = initialState, action) {
