@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import classes from './Content.scss';
+import ProvidersCarousel from 'containers/ProvidersCarousel';
 
 export class Content extends Component {
     static propTypes = {
@@ -13,6 +14,7 @@ export class Content extends Component {
                     <h1 className={`${classes.title} teal-text text-darken-2 center-align`}>
                         Providers on Duty
                     </h1>
+                    <ProvidersCarousel />
                 </div>
                 <div className="col s2">
 
