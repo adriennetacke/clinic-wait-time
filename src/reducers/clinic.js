@@ -13,8 +13,8 @@ const ACTION_HANDLERS = {
     [ADD_PROVIDER]: (state, action) => {
         return {
             ...state,
-            roster: [
-                ...state.roster,
+            providers: [
+                ...state.providers,
                 action.provider
             ]
         };
@@ -22,10 +22,10 @@ const ACTION_HANDLERS = {
 };
 
 const initialState = {
-    roster: []
+    providers: []
 };
 
-export default function providersReducer (state = initialState, action) {
+export default function clinicReducer (state = initialState, action) {
     const handler = ACTION_HANDLERS[action.type];
     return handler ? handler(state, action) : state;
 }

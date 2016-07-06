@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import providers from 'reducers/providers';
+import clinic from 'reducers/clinic';
 
 export default combineReducers({
-    providers
+    clinic
 });

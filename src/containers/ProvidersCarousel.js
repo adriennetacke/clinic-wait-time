@@ -18,7 +18,7 @@ export class ProvidersCarousel extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        items: state.providers.roster
+        items: state.clinic.providers
     };
 };
 
