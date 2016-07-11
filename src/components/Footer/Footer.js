@@ -13,7 +13,7 @@ export class Footer extends Component {
     render () {
         return (
             <div className={`row ${classes.layout}`}>
-                <div className="col s2 teal darken-2">
+                <div className="col s1 teal darken-2 center-align">
                     <Logo />
                 </div>
                 <UrgentWait time={this.props.time} />

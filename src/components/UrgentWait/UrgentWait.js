@@ -8,7 +8,7 @@ export class UrgentWait extends Component {
 
     render () {
         return (
-            <div className="col s8 teal darken-2">
+            <div className="col s9 teal darken-2 center-align">
                 <span className={classes.title}>
                     Urgent Care Wait
                     <i className="material-icons">access_time</i> {this.props.time} min
