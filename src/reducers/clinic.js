@@ -23,7 +23,8 @@ const ACTION_HANDLERS = {
 
 const initialState = {
     providers: [],
-    name: ''
+    name: '',
+    urgentWaitTime: ''
 };
 
 export default function clinicReducer (state = initialState, action) {

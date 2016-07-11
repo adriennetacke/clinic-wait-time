@@ -14,7 +14,6 @@ export class Content extends Component {
                     <h1 className={`${classes.title} teal-text text-darken-2 center-align`}>
                         Providers on Duty
                     </h1>
-                    <ProvidersCarousel />
                 </div>
                 <div className="col s2">
 

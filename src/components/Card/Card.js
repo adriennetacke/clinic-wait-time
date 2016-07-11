@@ -8,7 +8,7 @@ export class Card extends Component {
 
     render () {
         return (
-            <div className="col s3">
+            <div className="col">
                 <div className="card">
                     <div className="card-image">
                         <img src={this.props.imageUrl} />

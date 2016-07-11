@@ -3,8 +3,10 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from 'reducers';
-import Content from 'components/Content';
+
 import ClinicHeader from 'containers/ClinicHeader';
+import Content from 'components/Content';
+import ClinicFooter from 'containers/ClinicFooter';
 
 import 'normalize.css/normalize.css';
 import 'materialize-css/dist/css/materialize.css';
@@ -16,6 +18,7 @@ render(
         <div>
             <ClinicHeader />
             <Content />
+            <ClinicFooter />
         </div>
     </Provider>,
     document.getElementById('root')
