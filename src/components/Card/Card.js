@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react';
+import ProviderImage from 'components/ProviderImage';
 import classes from './Card.scss';
 
 export class Card extends Component {
     static propTypes = {
-        imageUrl: PropTypes.string.isRequired,
+        gender: PropTypes.string.isRequired,
         children: PropTypes.node
     }
 
@@ -12,7 +13,7 @@ export class Card extends Component {
             <div className={`${classes.layout} col`}>
                 <div className={`${classes.card} card`}>
                     <div className="card-image">
-                        <img src={this.props.imageUrl} />
+                        <ProviderImage gender={this.props.gender} />
                     </div>
                     {this.props.children}
                 </div>

@@ -3,6 +3,7 @@ const fakeDatabase = {
         {
             clinicId: 1,
             fullName: 'Jon Snow MD',
+            gender: 'male',
             hours: 0,
             minutes: 20,
             isUrgentCare: false
@@ -10,6 +11,7 @@ const fakeDatabase = {
         {
             clinicId: 1,
             fullName: 'Sansa Stark MD',
+            gender: 'female',
             hours: 0,
             minutes: 30,
             isUrgentCare: false
@@ -17,6 +19,7 @@ const fakeDatabase = {
         {
             clinicId: 1,
             fullName: 'Arya Stark MD',
+            gender: 'female',
             hours: 0,
             minutes: 15,
             isUrgentCare: false
@@ -24,6 +27,7 @@ const fakeDatabase = {
         {
             clinicId: 2,
             fullName: 'Bran Stark MD',
+            gender: 'male',
             hours: 0,
             minutes: 20,
             isUrgentCare: true
@@ -31,6 +35,7 @@ const fakeDatabase = {
         {
             clinicId: 1,
             fullName: 'Ned Stark MD',
+            gender: 'male',
             hours: 0,
             minutes: 0,
             isUrgentCare: false
@@ -38,6 +43,7 @@ const fakeDatabase = {
         {
             clinicId: 1,
             fullName: 'Catelyn Stark MD',
+            gender: 'female',
             hours: 0,
             minutes: 0,
             isUrgentCare: true

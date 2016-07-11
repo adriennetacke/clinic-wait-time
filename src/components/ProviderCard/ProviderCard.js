@@ -11,7 +11,7 @@ export class ProviderCard extends Component {
         const { hours, minutes, fullName } = this.props.provider;
 
         return (
-            <Card imageUrl="http://placekitten.com/g/400/400">
+            <Card gender={this.props.provider.gender}>
                 <div className="card-content center-align">
                     <div className={classes.time}>
                         <i className="material-icons">access_time</i>

@@ -23,7 +23,7 @@ const config = {
                 loaders: ['style', 'css?modules', 'sass']
             },
             {
-                test: /\.(eot|ttf|woff2?|otf|svg|png)$/,
+                test: /\.(eot|ttf|woff2?|otf|svg|png|jpg)$/,
                 loaders: ['file']
             }
         ]
