@@ -4,6 +4,8 @@ A simple wait time web application displayed on TVs at our Las Vegas clinics. It
 
 Built with JavaScript and Google Material Design.
 
+![](demo/screenshot.png)
+
 ## Usage
 
 To start the development version of the project, run the following commands:
