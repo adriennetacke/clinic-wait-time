@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import classes from './Card.scss';
 
 export class Card extends Component {
     static propTypes = {
@@ -8,8 +9,8 @@ export class Card extends Component {
 
     render () {
         return (
-            <div className="col">
-                <div className="card">
+            <div className={`${classes.layout} col`}>
+                <div className={`${classes.card} card`}>
                     <div className="card-image">
                         <img src={this.props.imageUrl} />
                     </div>

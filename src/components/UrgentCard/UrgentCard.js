@@ -9,10 +9,12 @@ export class UrgentCard extends Component {
 
     render () {
         return (
-            <Card imageUrl="http://placekitten.com/g/400/400">
-                <div className="card-content teal darken-2 white-text center-align">
-                    <div className={classes.urgent}>Urgent Care</div>
-                    <div className={classes.name}>{this.props.provider.FullName}</div>
+            <Card imageUrl="http://placekitten.com/g/1200/1200">
+                <div className={classes.layout}>
+                    <div className="card-content teal darken-2 white-text center-align">
+                        <div className={classes.urgent}>Urgent Care</div>
+                        <div className={classes.name}>{this.props.provider.fullName}</div>
+                    </div>
                 </div>
             </Card>
         );

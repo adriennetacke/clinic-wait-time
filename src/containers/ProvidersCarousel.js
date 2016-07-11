@@ -22,7 +22,7 @@ export class ProvidersCarousel extends Component {
             this.setState({
                 time: next()
             });
-        }, 5000);
+        }, 2000);
     }
 
     next () {
@@ -32,14 +32,21 @@ export class ProvidersCarousel extends Component {
     }
 
     render () {
-        const cards = this.props.items.map((item, i) => {
-            return item.UrgentCare
+        const sortedItems = this.props.items.sort((a, b) => {
+            if (a.isUrgentCare && !b.isUrgentCare) return 1;
+            if (!a.isUrgentCare && b.isUrgentCare) return -1;
+            
+            return 0;
+        });
+
+        const cards = sortedItems.map((item, i) => {
+            return item.isUrgentCare
                 ? <UrgentCard key={i} provider={item} />
                 : <ProviderCard key={i} provider={item} />;
             });
 
         const slides = cards.reduce((items, item, i) => {
-            const index = Math.floor(i/2);
+            const index = Math.floor(i/4);
 
             if (!items[index]) {
                 items[index] = [];

@@ -9,7 +9,7 @@ export class Carousel extends Component {
 
     render () {
         return (
-            <div className={`${classes.carousel} col s10`}>
+            <div className={`${classes.carousel}`}>
                 <ol className={classes.content}>
                     {this.props.children.map((child, i) => {
                         const active = this.props.currentSlide % this.props.children.length;
