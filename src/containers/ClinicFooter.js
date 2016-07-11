@@ -4,7 +4,7 @@ import Footer from 'components/Footer';
 
 export class ClinicFooter extends Component {
     static propTypes = {
-        time: PropTypes.string.isRequired
+        time: PropTypes.number.isRequired
     }
 
     render () {

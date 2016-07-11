@@ -24,7 +24,7 @@ export class ProvidersCarousel extends Component {
             this.setState({
                 time: next()
             });
-        }, 2000);
+        }, 5000);
     }
 
     next () {

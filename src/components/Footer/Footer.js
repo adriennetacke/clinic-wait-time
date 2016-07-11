@@ -7,7 +7,7 @@ import Clock from 'components/Clock';
 
 export class Footer extends Component {
     static propTypes = {
-        time: PropTypes.string
+        time: PropTypes.number
     }
 
     render () {

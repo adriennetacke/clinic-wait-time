@@ -42,14 +42,30 @@ const fakeDatabase = {
             minutes: 0,
             isUrgentCare: true
         }
+    ],
+    clinics: [
+        {
+            id: 1,
+            name: 'Winterfell',
+            urgentWait: 45
+        },
+        {
+            id: 2,
+            name: 'Castle Black',
+            urgentWait: 100
+        }
     ]
 };
 
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-export function getProviders (clinicId) {
+export function getClinicInfo (clinicId) {
     return delay(500).then(() => {
-        return fakeDatabase.providers.filter((provider) =>
-            provider.clinicId === clinicId);
-        });
+        return {
+            providers: fakeDatabase.providers.filter((provider) =>
+                provider.clinicId === clinicId),
+            clinic: fakeDatabase.clinics.filter((clinic) =>
+                clinic.id === clinicId)
+        };
+    });
 }

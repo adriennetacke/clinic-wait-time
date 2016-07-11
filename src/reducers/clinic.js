@@ -1,4 +1,4 @@
-import { getProviders } from 'api';
+import { getClinicInfo } from 'api';
 
 const REQUEST_CLINIC_INFO = 'REQUEST_CLINIC_INFO';
 const UPDATE_CLINIC_INFO  = 'UPDATE_CLINIC_INFO';
@@ -9,10 +9,12 @@ export function requestClinicInfo (clinicId) {
             type: REQUEST_CLINIC_INFO
         });
 
-        getProviders(clinicId).then((providers) => {
+        getClinicInfo(clinicId).then((clinicInfo) => {
             dispatch({
                 type: UPDATE_CLINIC_INFO,
-                providers
+                providers: clinicInfo.providers,
+                name: clinicInfo.clinic[0].name,
+                urgentWaitTime: clinicInfo.clinic[0].urgentWait
             });
         });
     };
@@ -29,6 +31,8 @@ const ACTION_HANDLERS = {
         return {
             ...state,
             providers: action.providers,
+            name: action.name,
+            urgentWaitTime: action.urgentWaitTime,
             isLoading: false
         };
     }
@@ -38,7 +42,7 @@ const initialState = {
     isLoading: false,
     providers: [],
     name: '',
-    urgentWaitTime: ''
+    urgentWaitTime: 0
 };
 
 export default function clinicReducer (state = initialState, action) {
