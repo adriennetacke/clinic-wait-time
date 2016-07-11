@@ -1,63 +1,42 @@
-const ADD_PROVIDER = 'ADD_PROVIDER';
+import { getProviders } from 'api';
 
-export function addProvider (name) {
-    return {
-        type: ADD_PROVIDER,
-        provider: {
-            name
-        }
+const REQUEST_CLINIC_INFO = 'REQUEST_CLINIC_INFO';
+const UPDATE_CLINIC_INFO  = 'UPDATE_CLINIC_INFO';
+
+export function requestClinicInfo (clinicId) {
+    return (dispatch) => {
+        dispatch({
+            type: REQUEST_CLINIC_INFO
+        });
+
+        getProviders(clinicId).then((providers) => {
+            dispatch({
+                type: UPDATE_CLINIC_INFO,
+                providers
+            });
+        });
     };
 }
 
 const ACTION_HANDLERS = {
-    [ADD_PROVIDER]: (state, action) => {
+    [REQUEST_CLINIC_INFO]: (state) => {
         return {
             ...state,
-            providers: [
-                ...state.providers,
-                action.provider
-            ]
+            isLoading: true
+        };
+    },
+    [UPDATE_CLINIC_INFO]: (state, action) => {
+        return {
+            ...state,
+            providers: action.providers,
+            isLoading: false
         };
     }
 };
 
 const initialState = {
-    providers: [{
-            fullName: 'Jon Snow MD',
-            hours: 0,
-            minutes: 20,
-            isUrgentCare: false
-        },
-        {
-            fullName: 'Sansa Stark MD',
-            hours: 0,
-            minutes: 30,
-            isUrgentCare: false
-        },
-        {
-            fullName: 'Arya Stark MD',
-            hours: 0,
-            minutes: 15,
-            isUrgentCare: false
-        },
-        {
-            fullName: 'Bran Stark MD',
-            hours: 0,
-            minutes: 20,
-            isUrgentCare: true
-        },
-        {
-            fullName: 'Ned Stark MD',
-            hours: 0,
-            minutes: 0,
-            isUrgentCare: false
-        },
-        {
-            fullName: 'Catelyn Stark MD',
-            hours: 0,
-            minutes: 0,
-            isUrgentCare: true
-        }],
+    isLoading: false,
+    providers: [],
     name: '',
     urgentWaitTime: ''
 };

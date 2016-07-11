@@ -3,10 +3,12 @@ import { connect } from 'react-redux';
 import Carousel from 'components/Carousel';
 import ProviderCard from 'components/ProviderCard';
 import UrgentCard from 'components/UrgentCard';
+import { requestClinicInfo } from 'reducers/clinic';
 
 export class ProvidersCarousel extends Component {
     static propTypes = {
-        items: PropTypes.array.isRequired
+        items: PropTypes.array.isRequired,
+        getClinicInfo: PropTypes.func.isRequired
     }
 
     constructor (props) {
@@ -31,11 +33,15 @@ export class ProvidersCarousel extends Component {
         });
     }
 
+    componentDidMount () {
+        this.props.getClinicInfo(1);
+    }
+
     render () {
         const sortedItems = this.props.items.sort((a, b) => {
             if (a.isUrgentCare && !b.isUrgentCare) return 1;
             if (!a.isUrgentCare && b.isUrgentCare) return -1;
-            
+
             return 0;
         });
 
@@ -75,7 +81,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-
+        getClinicInfo: (clinicId) => dispatch(requestClinicInfo(clinicId))
     };
 };
 
